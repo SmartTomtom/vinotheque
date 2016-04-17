@@ -1,5 +1,5 @@
 <head>
-  <title>simple</title>
+  <title>Vinothèque</title>
 </head>
 
 <body>
@@ -13,6 +13,22 @@
     {{/each}}
   </ul>
 
+  <h1>Nouvelle entrée en cave</h1>
+  {{> newEntry}}
+
+  <h1>Historique des entrées</h1>
+  <ul>
+    {{#each entries}}
+      {{> entry}}
+    {{/each}}
+  </ul>
+
+  <h1>Contenu de la cave</h1>
+  <ul>
+    {{#each bottles}}
+      {{> bottle}}
+    {{/each}}
+  </ul>
 </body>
 
 <template name="newWine">
@@ -27,6 +43,39 @@
   </form>
 </template>
 
+<template name="newEntry">
+  <form id="new-entry">
+    <label for="date">Date</label>
+    <input type="text" name="date" placeholder="date de l'entrée en cave" /><br/>
+    <label for="wine">Vin</label>
+    <select name="wine">
+      <option selected value="0">--- Sélectionner un vin ---</option>
+      {{#each wines}}
+        {{> wineForList}}
+      {{/each}}
+    </select><br/>
+    <label for="millesime">Millésime</label>
+    <input type="number" name="millesime" placeholder="Entrer un millesime" /><br/>
+    <label for="quantity">Quantité</label>
+    <input type="number" name="quantity" placeholder="Entrer la quantité" /><br/>
+    <label for="comments">Commentaires</label>
+    <input type="text" name="comments" placeholder="Entrer un commentaire" /><br/>
+    <input type="submit" value="Ajouter"/>
+  </form>
+</template>
+
 <template name="wine">
-  <li>{{color}} - {{designation}} - {{domain}}</li>
+  <li>{{_id}} - {{color}} - {{designation}} - {{domain}}</li>
+</template>
+
+<template name="wineForList">
+  <option value={{_id}}>{{designation}} - {{domain}}</option>
+</template>
+
+<template name="bottle">
+  <li>{{_id}} - {{wineId}} - {{millesime}} - {{quantity}}</li>
+</template>
+
+<template name="entry">
+  <li>{{date}} - {{bottleId}} - {{quantity}} - {{comments}}</li>
 </template>
