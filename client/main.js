@@ -1,22 +1,36 @@
 import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import { Wines } from '../imports/api/wines/wines.js';
 
 import './main.html';
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+Template.newWine.events({
+  "submit #new-wine": function(event, template){
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    // Get value from form
+    const target = event.target;
+    const color = target.color.value;
+    const designation = target.designation.value;
+    const domain = target.domain.value;
+
+    // Insert a wine into the collection
+    Wines.insert({
+      color: color,
+      designation: designation,
+      domain: domain,
+    });
+
+    // Clear form
+    target.color.value = '';
+    target.designation.value = '';
+    target.domain.value = '';
+  }
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
-
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
+Template.body.helpers({
+  wines() {
+    // Show newest tasks at the top
+    return Wines.find({});
   },
 });

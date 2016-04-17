@@ -3,23 +3,30 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+  <h1>Ajouter un vin</h1>
+  {{> newWine}}
 
-  {{> hello}}
-  {{> info}}
+  <h1>Liste de vins</h1>
+  <ul>
+    {{#each wines}}
+      {{> wine}}
+    {{/each}}
+  </ul>
+
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="newWine">
+  <form id="new-wine">
+    <label for="color">Couleur</label>
+    <input type="text" name="color" placeholder="rouge/blanc/rosé..." /><br/>
+    <label for="designation">Appellation</label>
+    <input type="text" name="designation" placeholder="Entrer une appellation" /><br/>
+    <label for="domain">Domaine</label>
+    <input type="text" name="domain" placeholder="Entrer un domaine" /><br/>
+    <input type="submit" value="Ajouter"/>
+  </form>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com">Discussions</a></li>
-  </ul>
+<template name="wine">
+  <li>{{color}} - {{designation}} - {{domain}}</li>
 </template>
