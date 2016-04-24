@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Bottles } from '../bottles/bottles.js';
 
 export const Wines = new Mongo.Collection('wines');
 

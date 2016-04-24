@@ -65,7 +65,7 @@
 </template>
 
 <template name="wine">
-  <li>{{_id}} - {{color}} - {{designation}} - {{domain}}</li>
+  <li>{{designation}} - {{domain}} - {{color}}</li>
 </template>
 
 <template name="wineForList">
@@ -73,9 +73,15 @@
 </template>
 
 <template name="bottle">
-  <li>{{_id}} - {{wineId}} - {{millesime}} - {{quantity}}</li>
+  <li>
+    {{wine.designation}} - {{millesime}} - {{wine.domain}} : {{quantity}}
+    <button class="delete">Supprimer</button>
+  </li>
 </template>
 
 <template name="entry">
-  <li>{{date}} - {{bottleId}} - {{quantity}} - {{comments}}</li>
+  <li>
+    {{date}} - {{wine.designation}} - {{bottles.millesime}} - {{quantity}} - {{comments}}
+    <button class="delete">Supprimer</button>
+  </li>
 </template>

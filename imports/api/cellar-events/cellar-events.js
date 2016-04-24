@@ -1,5 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import { Wines } from '../wines/wines.js';
+import { Bottles } from '../bottles/bottles.js';
 
 export const CellarEvents = new Mongo.Collection('cellar-events');
 
@@ -15,7 +17,10 @@ CellarEvents.schema = new SimpleSchema ({
 CellarEvents.helpers({
   bottles() {
     return Bottles.findOne(this.bottleId);
-  }
+  },
+  wine() {
+    return Bottles.findOne(this.bottleId).wine();
+  },
 });
 
 CellarEvents.attachSchema(CellarEvents.schema);

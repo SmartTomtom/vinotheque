@@ -27,6 +27,27 @@ Template.newEntry.helpers({
   },
 });
 
+Template.bottle.events({
+  "click .delete"() {
+    Bottles.remove(this._id);
+  }
+});
+
+// Template.entry.helpers({
+//   bottles() {
+//     return Bottles.findOne(this.bottleId);
+//   },
+//   wine() {
+//     return Bottles.findOne(this.bottleId).wine();
+//   },
+// });
+
+Template.entry.events({
+  "click .delete"() {
+    CellarEvents.remove(this._id);
+  }
+});
+
 Template.newEntry.events({
   "submit #new-entry": function(event, template){
     // Prevent default browser form submit
@@ -41,20 +62,20 @@ Template.newEntry.events({
     const quantity = target.quantity.value;
     const comments = target.comments.value;
 
-    // Insert bottles into the collection
+    // Insert entries and bottles into the collection
     Bottles.insert({
       wineId: wineId,
       millesime: millesime,
       quantity: quantity,
+    },
+    function(err, upserted) {
+      CellarEvents.insert({
+         date: date,
+         type: "in",
+         quantity: quantity,
+         bottleId: upserted,
+       });
     });
-
-    // Insert entries into the collection
-    // CellarEvents.insert({
-    //   date: date,
-    //   type: "in",
-    //   quantity: quantity,
-    //   bottleId: bottleId,
-    // });
 
     // Clear form
     target.date.value = '';
