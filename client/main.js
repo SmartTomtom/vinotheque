@@ -2,21 +2,43 @@ import { Template } from 'meteor/templating';
 import { Wines } from '../imports/api/wines/wines.js';
 import { Bottles } from '../imports/api/bottles/bottles.js';
 import { CellarEvents } from '../imports/api/cellar-events/cellar-events.js';
+import { Designations } from '../imports/api/designations/designations.js';
 
 import './main.html';
 
-Template.body.helpers({
-  wines() {
-    // Show wines
-    return Wines.find({});
-  },
+Router.configure({
+  layoutTemplate: 'ApplicationLayout'
+});
+Router.route('/', function (){
+    this.render('home');
+});
+Router.route('/new-wine', function (){
+    this.render('newWine');
+});
+Router.route('/designations', function (){
+    this.render('designations');
+});
+Router.route('/history', function (){
+    this.render('history');
+});
+
+Template.home.helpers({
   bottles() {
     // Show bottles
     return Bottles.find({});
   },
-  entries() {
-    // Show entries
-    return CellarEvents.find({ type: "in"});
+});
+
+Template.home.events({
+  "click .deleteBottle"() {
+    Bottles.remove(this._id);
+  },
+  "click .deleteEntry"() {
+    CellarEvents.remove(this._id);
+  },
+  "click .test"() {
+    Meteor.call('xmlParse');
+    //Meteor.call('test');
   },
 });
 
@@ -27,28 +49,49 @@ Template.newEntry.helpers({
   },
 });
 
-Template.bottle.events({
-  "click .delete"() {
-    Bottles.remove(this._id);
-  }
+Template.newWine.helpers({
+  wines() {
+    // Show wines
+    return Wines.find({});
+  },
+  designations() {
+    // Show designations
+    return Designations.find({});
+  },
+  parcels() {
+    // Show parcels
+    return Parcels.find({});
+  },
 });
 
-// Template.entry.helpers({
-//   bottles() {
-//     return Bottles.findOne(this.bottleId);
-//   },
-//   wine() {
-//     return Bottles.findOne(this.bottleId).wine();
-//   },
-// });
+Template.designations.helpers({
+  designations() {
+    // Show designations
+    return Designations.find({});
+  },
+});
 
-Template.entry.events({
+Template.designations.events({
   "click .delete"() {
-    CellarEvents.remove(this._id);
-  }
+    Designations.remove(this._id);
+  },
+});
+
+Template.history.helpers({
+  entries() {
+    // Show entries
+    return CellarEvents.find({ type: "in"});
+  },
+  exits() {
+    // Show exits
+    return CellarEvents.find({ type: "out"});
+  },
 });
 
 Template.newEntry.events({
+  "click .deleteWine"() {
+    Wines.remove(this._id);
+  },
   "submit #new-entry": function(event, template){
     // Prevent default browser form submit
     event.preventDefault();
@@ -58,24 +101,21 @@ Template.newEntry.events({
     const date = target.date.value;
     const index = target.wine.selectedIndex;
     const wineId = target.wine.options[index].value;
-    const millesime = target.millesime.value;
-    const quantity = target.quantity.value;
+    const millesime = Number(target.millesime.value);
+    const quantity = Number(target.quantity.value);
     const comments = target.comments.value;
 
-    // Insert entries and bottles into the collection
-    Bottles.insert({
-      wineId: wineId,
-      millesime: millesime,
-      quantity: quantity,
-    },
-    function(err, upserted) {
-      CellarEvents.insert({
-         date: date,
-         type: "in",
-         quantity: quantity,
-         bottleId: upserted,
-       });
-    });
+    Meteor.call('upsertBottle', wineId, millesime, quantity, date,
+      function(error, result){
+        var id = result;
+        CellarEvents.insert({
+           date: date,
+           type: "in",
+           quantity: quantity,
+           bottleId: id,
+         });
+      }
+    );
 
     // Clear form
     target.date.value = '';
@@ -83,7 +123,7 @@ Template.newEntry.events({
     target.millesime.value = '';
     target.quantity.value = '';
     target.comments.value = '';
-  }
+  },
 });
 
 Template.newWine.events({
@@ -94,19 +134,20 @@ Template.newWine.events({
     // Get values from form
     const target = event.target;
     const color = target.color.value;
-    const designation = target.designation.value;
+    const indexD = target.designation.selectedIndex;
+    const designationId = target.designation.options[indexD].value;
     const domain = target.domain.value;
 
     // Insert a wine into the collection
     Wines.insert({
       color: color,
-      designation: designation,
+      designationId: designationId,
       domain: domain,
     });
 
     // Clear form
     target.color.value = '';
-    target.designation.value = '';
+    target.designation.selectedIndex=0;
     target.domain.value = '';
   }
 });

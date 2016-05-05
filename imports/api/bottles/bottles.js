@@ -13,7 +13,7 @@ Bottles.schema = new SimpleSchema ({
 Bottles.helpers({
   wine() {
     return Wines.findOne(this.wineId);
-  }
+  },
 });
 
 Bottles.attachSchema(Bottles.schema);

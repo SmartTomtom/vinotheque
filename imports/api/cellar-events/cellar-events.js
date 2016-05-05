@@ -7,7 +7,7 @@ export const CellarEvents = new Mongo.Collection('cellar-events');
 
 CellarEvents.schema = new SimpleSchema ({
   date: {type: String},
-  type: {type: String},
+  type: {type: String, allowedValues: ['in', 'out']},
   quantity: {type: Number},
   bottleId: {type: String},
   comments: {type: String, optional: true},
@@ -15,7 +15,7 @@ CellarEvents.schema = new SimpleSchema ({
 });
 
 CellarEvents.helpers({
-  bottles() {
+  bottle() {
     return Bottles.findOne(this.bottleId);
   },
   wine() {
