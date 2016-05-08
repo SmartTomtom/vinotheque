@@ -3,6 +3,8 @@ import { Wines } from '../imports/api/wines/wines.js';
 import { Bottles } from '../imports/api/bottles/bottles.js';
 import { CellarEvents } from '../imports/api/cellar-events/cellar-events.js';
 import { Designations } from '../imports/api/designations/designations.js';
+import { Parcels } from '../imports/api/parcels/parcels.js';
+import { ReactiveVar } from 'meteor/reactive-var';
 
 import './main.html';
 
@@ -12,8 +14,8 @@ Router.configure({
 Router.route('/', function (){
     this.render('home');
 });
-Router.route('/new-wine', function (){
-    this.render('newWine');
+Router.route('/wines', function (){
+    this.render('wines');
 });
 Router.route('/designations', function (){
     this.render('designations');
@@ -33,13 +35,6 @@ Template.home.events({
   "click .deleteBottle"() {
     Bottles.remove(this._id);
   },
-  "click .deleteEntry"() {
-    CellarEvents.remove(this._id);
-  },
-  "click .test"() {
-    Meteor.call('xmlParse');
-    //Meteor.call('test');
-  },
 });
 
 Template.newEntry.helpers({
@@ -49,49 +44,7 @@ Template.newEntry.helpers({
   },
 });
 
-Template.newWine.helpers({
-  wines() {
-    // Show wines
-    return Wines.find({});
-  },
-  designations() {
-    // Show designations
-    return Designations.find({});
-  },
-  parcels() {
-    // Show parcels
-    return Parcels.find({});
-  },
-});
-
-Template.designations.helpers({
-  designations() {
-    // Show designations
-    return Designations.find({});
-  },
-});
-
-Template.designations.events({
-  "click .delete"() {
-    Designations.remove(this._id);
-  },
-});
-
-Template.history.helpers({
-  entries() {
-    // Show entries
-    return CellarEvents.find({ type: "in"});
-  },
-  exits() {
-    // Show exits
-    return CellarEvents.find({ type: "out"});
-  },
-});
-
 Template.newEntry.events({
-  "click .deleteWine"() {
-    Wines.remove(this._id);
-  },
   "submit #new-entry": function(event, template){
     // Prevent default browser form submit
     event.preventDefault();
@@ -106,27 +59,47 @@ Template.newEntry.events({
     const comments = target.comments.value;
 
     Meteor.call('upsertBottle', wineId, millesime, quantity, date,
-      function(error, result){
-        var id = result;
-        CellarEvents.insert({
-           date: date,
-           type: "in",
-           quantity: quantity,
-           bottleId: id,
-         });
-      }
-    );
+       function(error, result){
+         var id = result;
+         CellarEvents.insert({
+            date: date,
+            type: "in",
+            quantity: quantity,
+            bottleId: id,
+          });
+       }
+     );
 
-    // Clear form
-    target.date.value = '';
-    target.wine.selectedIndex=0;
-    target.millesime.value = '';
-    target.quantity.value = '';
-    target.comments.value = '';
+     // Clear form
+     target.date.value = '';
+     target.wine.selectedIndex=0;
+     target.millesime.value = '';
+     target.quantity.value = '';
+     target.comments.value = '';
   },
 });
 
-Template.newWine.events({
+Template.wines.onCreated(function() {
+  this.SelectedItem = new ReactiveVar( "0" );
+});
+
+Template.wines.helpers({
+  wines() {
+    // Show wines
+    return Wines.find({});
+  },
+  designations() {
+    // Show designations
+    return Designations.find({});
+  },
+  parcels() {
+    // Show parcels of a designation
+    var index = Template.instance().SelectedItem.get();
+    return Parcels.find({designationId: index});
+  },
+});
+
+Template.wines.events({
   "submit #new-wine": function(event, template){
     // Prevent default browser form submit
     event.preventDefault();
@@ -136,18 +109,63 @@ Template.newWine.events({
     const color = target.color.value;
     const indexD = target.designation.selectedIndex;
     const designationId = target.designation.options[indexD].value;
+    const indexP = target.parcel.selectedIndex;
+    const parcelId = target.parcel.options[indexP].value;
     const domain = target.domain.value;
 
     // Insert a wine into the collection
     Wines.insert({
       color: color,
       designationId: designationId,
+      parcelId: parcelId,
       domain: domain,
     });
 
     // Clear form
-    target.color.value = '';
+    target.color.value = 'red';
     target.designation.selectedIndex=0;
     target.domain.value = '';
-  }
+  },
+  "change #designation": function(event, template){
+    var currentTarget = event.currentTarget;
+    const index = currentTarget.selectedIndex;
+    const designationId = currentTarget.options[index].value;
+    template.SelectedItem.set(designationId);
+  },
+  "click .deleteWine"() {
+    Wines.remove(this._id);
+  },
+});
+
+Template.designations.helpers({
+  designations() {
+    // Show designations
+    return Designations.find({});
+  },
+});
+
+Template.designations.events({
+  "click .delete"() {
+    Designations.remove(this._id);
+  },
+  "click .add"() {
+    Meteor.call('xmlParse');
+  },
+});
+
+Template.history.helpers({
+  entries() {
+    // Show entries
+    return CellarEvents.find({ type: "in"});
+  },
+  exits() {
+    // Show exits
+    return CellarEvents.find({ type: "out"});
+  },
+});
+
+Template.history.events({
+  "click .deleteEntry"() {
+    CellarEvents.remove(this._id);
+  },
 });

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<designations>
+  <designation name="Bâtard-Montrachet" category="Grand cru">
+      <parcel name="Bâtard-Montrachet" />
+      <parcel name="Bâtard-Montrachet 2" />
+  </designation>
+  <designation name="Bonnes-Mares" category="Grand cru">
+      <parcel name="Les Bonnes Mares" />
+  </designation>
+</designations>

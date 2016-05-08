@@ -12,7 +12,7 @@ Designations.schema = new SimpleSchema ({
 Designations.helpers({
   parcels() {
     return Parcels.find({ designationId: this._id });
-  }
+  },
 });
 
 Designations.attachSchema(Designations.schema);

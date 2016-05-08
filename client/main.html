@@ -5,7 +5,7 @@
         <a href="/">Home</a>
       </li>
       <li>
-        <a href="/new-wine">Ajouter un vin</a>
+        <a href="/wines">Liste des vins</a>
       </li>
       <li>
         <a href="/designations">Liste des appellations</a>
@@ -33,46 +33,12 @@
     <ul>
       {{#each bottles}}
         <li>
-          {{wine.designation}} - {{millesime}} - {{wine.domain}} : {{quantity}}
+          {{wine.designation.name}} - {{millesime}} - {{wine.domain}} : {{quantity}}
           <button class="deleteBottle">Supprimer</button>
         </li>
       {{/each}}
     </ul>
   </body>
-</template>
-
-<template name="newWine">
-  <h1>Ajouter un vin</h1>
-  <form id="new-wine">
-    <label for="color">Couleur</label>
-    <input type="text" name="color" placeholder="rouge/blanc/rosé..." /><br/>
-    <label for="designation">Appellation</label>
-    <select name="designation">
-      <option selected value="0">--- Sélectionner une appellation ---</option>
-      {{#each designations}}
-        <option value={{_id}}>{{name}}</option>
-      {{/each}}
-    </select><br/>
-    <label for="parcel">Climat</label>
-    <select name="parcel">
-      <option selected value="0">--- Sélectionner un climat ---</option>
-      {{#each parcels}}
-        <option value={{_id}}>{{name}}</option>
-      {{/each}}
-    </select><br/>
-    <label for="domain">Domaine</label>
-    <input type="text" name="domain" placeholder="Entrer un domaine" /><br/>
-    <input type="submit" value="Ajouter"/>
-  </form>
-  <h1>Liste des vins</h1>
-  <ul>
-    {{#each wines}}
-      <li>
-        {{designation}} - {{domain}} - {{color}}
-        <button class="deleteWine">Supprimer</button>
-      </li>
-    {{/each}}
-  </ul>
 </template>
 
 <template name="newEntry">
@@ -83,7 +49,7 @@
     <select name="wine">
       <option selected value="0">--- Sélectionner un vin ---</option>
       {{#each wines}}
-        <option value={{_id}}>{{designation}} - {{domain}}</option>
+        <option value={{_id}}>{{designation.name}} - {{parcel.name}} - {{domain}}</option>
       {{/each}}
     </select><br/>
     <label for="millesime">Millésime</label>
@@ -96,17 +62,59 @@
   </form>
 </template>
 
-<template name="designations">
-  <h1>Liste des appellations</h1>
+<template name="wines">
+  <h1>Ajouter un vin</h1>
+  <form id="new-wine">
+    <label for="color">Couleur: </label>
+    <input type="radio" class="color" name="color" value="red" checked/>Rouge
+    <input type="radio" class="color" name="color" value="white" />Blanc
+    <br/>
+    <label for="designation">Appellation</label>
+    <select id="designation" name="designation">
+      <option selected value="0">--- Sélectionner une appellation ---</option>
+      {{#each designation in designations}}
+        <option value={{designation._id}}>{{designation.name}}</option>
+      {{/each}}
+    </select>
+    <select id="parcel" name="parcel">
+      {{#each parcel in parcels}}
+        <option value={{parcel._id}}>{{parcel.name}}</option>
+      {{else}}
+        <option selected value="0">--- Sélectionner un climat ---</option>
+      {{/each}}
+    </select><br/>
+    <label for="domain">Domaine</label>
+    <input type="text" name="domain" placeholder="Entrer un domaine" /><br/>
+    <input type="submit" value="Ajouter"/>
+  </form>
+  <h1>Liste des vins</h1>
   <ul>
-    {{#each designations}}
+    {{#each wines}}
       <li>
-        {{name}} - {{category}}
-        <button class="delete">Supprimer</button>
+        {{designation.name}} - {{domain}} - {{color}}
+        <button class="deleteWine">Supprimer</button>
       </li>
     {{/each}}
   </ul>
-  <button class="test">Test</button>
+</template>
+
+<template name="designations">
+  <h1>Liste des appellations</h1>
+  <ul>
+    {{#each designation in designations}}
+      <li>
+        {{designation.name}}
+        <ul>
+          {{#each parcel in designation.parcels}}
+            <li>
+              {{parcel.name}}
+            </li>
+          {{/each}}
+        </ul>
+      </li><br/>
+    {{/each}}
+  </ul>
+  <button class="add">Ajouter</button>
 </template>
 
 <template name="history">
@@ -114,7 +122,7 @@
   <ul>
     {{#each entries}}
       <li>
-        {{date}} - {{wine.designation}} - {{bottle.millesime}} - {{quantity}} - {{comments}}
+        {{date}} - {{wine.designation.name}} - {{bottle.millesime}} - {{quantity}} - {{comments}}
         <button class="deleteEntry">Supprimer</button>
       </li>
     {{/each}}
