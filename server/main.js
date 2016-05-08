@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Wines } from '../imports/api/wines/wines.js';
 import { Bottles } from '../imports/api/bottles/bottles.js';
-import { CellarEvents } from '../imports/api/cellar-events/cellar-events.js';
+import { CellarEvents } from '../imports/api/cellarevents/cellarevents.js';
 import { Designations } from '../imports/api/designations/designations.js';
 import { Parcels } from '../imports/api/parcels/parcels.js';
 
@@ -50,7 +50,7 @@ Meteor.methods({
       console.log('parcel created : ', parcelId);
     }
   },
-  'upsertBottle': function(wineId, millesime, quantity, date){
+  'upsertBottle': function(wineId, millesime, quantity){
     var bottle = Bottles.findOne({ wineId: wineId, millesime: millesime});
     if ( bottle != null ) {
       Bottles.update(

@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { Wines } from '../imports/api/wines/wines.js';
 import { Bottles } from '../imports/api/bottles/bottles.js';
-import { CellarEvents } from '../imports/api/cellar-events/cellar-events.js';
+import { CellarEvents } from '../imports/api/cellarevents/cellarevents.js';
 import { Designations } from '../imports/api/designations/designations.js';
 import { Parcels } from '../imports/api/parcels/parcels.js';
 import { ReactiveVar } from 'meteor/reactive-var';
@@ -24,23 +24,39 @@ Router.route('/history', function (){
     this.render('history');
 });
 
-Template.home.helpers({
-  bottles() {
+Template.registerHelper(
+  "today", function () {
+    var date = new Date();
+    var dateFormat = require('dateformat');
+    var dateFormated = dateFormat(date,'yyyy-mm-dd');
+    return dateFormated;
+  },
+);
+
+Template.registerHelper(
+  "wines", function () {
+    // Show wines
+    return Wines.find({});
+  },
+);
+
+Template.registerHelper(
+  "bottles", function () {
     // Show bottles
     return Bottles.find({});
   },
-});
+);
+
+Template.registerHelper(
+  "designations", function () {
+    // Show designations
+    return Designations.find({});
+  },
+);
 
 Template.home.events({
   "click .deleteBottle"() {
     Bottles.remove(this._id);
-  },
-});
-
-Template.newEntry.helpers({
-  wines() {
-    // Show wines
-    return Wines.find({});
   },
 });
 
@@ -57,25 +73,75 @@ Template.newEntry.events({
     const millesime = Number(target.millesime.value);
     const quantity = Number(target.quantity.value);
     const comments = target.comments.value;
-
-    Meteor.call('upsertBottle', wineId, millesime, quantity, date,
-       function(error, result){
-         var id = result;
-         CellarEvents.insert({
-            date: date,
-            type: "in",
-            quantity: quantity,
-            bottleId: id,
-          });
-       }
-     );
+    
+    Meteor.call('upsertBottle', wineId, millesime, quantity,
+      function(error, result){
+        var id = result;
+        CellarEvents.insert({
+           date: date,
+           type: "in",
+           quantity: quantity,
+           bottleId: id,
+           comments: comments,
+         });
+      }
+    );
 
      // Clear form
-     target.date.value = '';
      target.wine.selectedIndex=0;
      target.millesime.value = '';
      target.quantity.value = '';
      target.comments.value = '';
+  },
+});
+
+Template.newExit.onCreated(function() {
+  this.exitChecked = new ReactiveVar(false);
+});
+
+Template.newExit.helpers({
+  exitChecked() {
+    // Show parcels of a designation
+    var bool = Template.instance().exitChecked.get();
+    return bool;
+  },
+});
+
+Template.newExit.events({
+  "submit #new-exit": function(event, template){
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    // Get values from form
+    const target = event.target;
+    const date = target.date.value;
+    const bottleId = target.bottle.value;
+    const quantity = Number(target.quantity.value);
+    const comments = target.comments.value;
+
+    Bottles.update(
+      { _id: bottleId },
+      { $inc: { quantity: quantity*-1 } },
+    );
+    CellarEvents.insert({
+       date: date,
+       type: "out",
+       quantity: quantity,
+       bottleId: bottleId,
+       comments: comments,
+     });
+
+     // Clear form
+     target.quantity.value = '';
+     target.comments.value = '';
+  },
+  "click .exitBottle": function(event, template){
+    const target = event.target;
+    if(template.exitChecked.get()){
+      template.exitChecked.set(false);
+    } else {
+      template.exitChecked.set(true);
+    }
   },
 });
 
@@ -84,14 +150,6 @@ Template.wines.onCreated(function() {
 });
 
 Template.wines.helpers({
-  wines() {
-    // Show wines
-    return Wines.find({});
-  },
-  designations() {
-    // Show designations
-    return Designations.find({});
-  },
   parcels() {
     // Show parcels of a designation
     var index = Template.instance().SelectedItem.get();
@@ -137,13 +195,6 @@ Template.wines.events({
   },
 });
 
-Template.designations.helpers({
-  designations() {
-    // Show designations
-    return Designations.find({});
-  },
-});
-
 Template.designations.events({
   "click .delete"() {
     Designations.remove(this._id);
@@ -165,7 +216,7 @@ Template.history.helpers({
 });
 
 Template.history.events({
-  "click .deleteEntry"() {
+  "click .deleteCellarEv"() {
     CellarEvents.remove(this._id);
   },
 });

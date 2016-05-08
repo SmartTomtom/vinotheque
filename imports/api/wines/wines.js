@@ -23,6 +23,16 @@ Wines.helpers({
   parcel() {
     return Parcels.findOne(this.parcelId);
   },
+  colorFormated() {
+    var color = this.color;
+    if(color == 'red'){
+      return "Rouge";
+    } else if (color == 'white') {
+      return "Blanc";
+    } else {
+      return color;
+    }
+  },
 });
 
 Wines.attachSchema(Wines.schema);

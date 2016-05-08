@@ -35,6 +35,7 @@
         <li>
           {{wine.designation.name}} - {{millesime}} - {{wine.domain}} : {{quantity}}
           <button class="deleteBottle">Supprimer</button>
+          {{> newExit this}}
         </li>
       {{/each}}
     </ul>
@@ -44,12 +45,12 @@
 <template name="newEntry">
   <form id="new-entry">
     <label for="date">Date</label>
-    <input type="text" name="date" placeholder="date de l'entrée en cave" /><br/>
+    <input type="date" name="date" value={{today}}><br/>
     <label for="wine">Vin</label>
     <select name="wine">
       <option selected value="0">--- Sélectionner un vin ---</option>
-      {{#each wines}}
-        <option value={{_id}}>{{designation.name}} - {{parcel.name}} - {{domain}}</option>
+      {{#each wine in wines}}
+        <option value={{wine._id}}>{{wine.designation.name}} - {{wine.parcel.name}} - {{wine.domain}}</option>
       {{/each}}
     </select><br/>
     <label for="millesime">Millésime</label>
@@ -60,6 +61,22 @@
     <input type="text" name="comments" placeholder="Entrer un commentaire" /><br/>
     <input type="submit" value="Ajouter"/>
   </form>
+</template>
+
+<template name="newExit">
+  <button class="exitBottle">Sortir</button><br/>
+  {{#if exitChecked}}
+    <form id="new-exit">
+      <input type="hidden" name="bottle" value={{_id}}>
+      <label for="date">Date</label>
+      <input type="date" name="date" value={{today}}><br/>
+      <label for="quantity">Quantité</label>
+      <input type="number" name="quantity" placeholder="Entrer la quantité" /><br/>
+      <label for="comments">Commentaires</label>
+      <input type="text" name="comments" placeholder="Entrer un commentaire" /><br/>
+      <input type="submit" value="Ajouter"/>
+    </form>
+  {{/if}}
 </template>
 
 <template name="wines">
@@ -91,7 +108,7 @@
   <ul>
     {{#each wines}}
       <li>
-        {{designation.name}} - {{domain}} - {{color}}
+        {{designation.name}} - {{domain}} - {{colorFormated}}
         <button class="deleteWine">Supprimer</button>
       </li>
     {{/each}}
@@ -122,8 +139,8 @@
   <ul>
     {{#each entries}}
       <li>
-        {{date}} - {{wine.designation.name}} - {{bottle.millesime}} - {{quantity}} - {{comments}}
-        <button class="deleteEntry">Supprimer</button>
+        {{dateFormated}} - {{wine.designation.name}} - {{bottle.millesime}} - {{quantity}} - {{comments}}
+        <button class="deleteCellarEv">Supprimer</button>
       </li>
     {{/each}}
   </ul>
@@ -131,8 +148,8 @@
   <ul>
     {{#each exits}}
       <li>
-        {{date}} - {{wine.designation}} - {{bottle.millesime}} - {{quantity}} - {{comments}}
-        <button class="deleteEntry">Supprimer</button>
+        {{dateFormated}} - {{wine.designation.name}} - {{bottle.millesime}} - {{quantity}} - {{comments}}
+        <button class="deleteCellarEv">Supprimer</button>
       </li>
     {{/each}}
   </ul>
