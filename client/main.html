@@ -118,11 +118,12 @@
 <template name="designations">
   <h1>Liste des appellations</h1>
   <ul>
-    {{#each designation in designations}}
+    {{#each designations}}
       <li>
-        {{designation.name}}
+        {{name}}
+        <button class="delete">Supprimer</button>
         <ul>
-          {{#each parcel in designation.parcels}}
+          {{#each parcel in this.parcels}}
             <li>
               {{parcel.name}}
             </li>

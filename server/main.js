@@ -11,6 +11,10 @@ Meteor.startup(() => {
 });
 
 Meteor.methods({
+  'deleteDesignation': function(id) {
+    Parcels.remove({designationId: id});
+    Designations.remove(id);
+  },
   'insertDesignation': function(data) {
     console.log ('!! Insert Designation !!');
     console.log('name: ',data['$'].name);

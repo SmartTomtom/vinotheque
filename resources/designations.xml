@@ -1,10 +1,198 @@
 <?xml version="1.0"?>
 <designations>
-  <designation name="Bâtard-Montrachet" category="Grand cru">
-      <parcel name="Bâtard-Montrachet" />
-      <parcel name="Bâtard-Montrachet 2" />
+  <designation name="Aloxe-Corton" category="Village">
+    <parcel name="Clos des Maréchaudes" category="Premier Cru" />
+    <parcel name="Clos du Chapitre" category="Premier Cru" />
+    <parcel name="La Coutière" category="Premier Cru" />
+    <parcel name="La Maréchaude" category="Premier Cru" />
+    <parcel name="La Toppe au Vert" category="Premier Cru" />
+    <parcel name="Les Chaillots" category="Premier Cru" />
+    <parcel name="Les Fournières" category="Premier Cru" />
+    <parcel name="Les Guérets" category="Premier Cru" />
+    <parcel name="Les Maréchaudes" category="Premier Cru" />
+    <parcel name="Les Moutottes " category="Premier Cru" />
+    <parcel name="Les Paulands" category="Premier Cru" />
+    <parcel name="Les Petites Folières" category="Premier Cru" />
+    <parcel name="Les Valozières" category="Premier Cru" />
+    <parcel name="Les Vercots" category="Premier Cru" />
+    <parcel name="Boulmeau" />
+    <parcel name="La Boulotte" />
+    <parcel name="La Toppe Marteneau" />
+    <parcel name="Les Boutières" />
+    <parcel name="Les Brunettes et Planchots" />
+    <parcel name="Les Bruyères" />
+    <parcel name="Les Caillettes" />
+    <parcel name="Les Citernes" />
+    <parcel name="Les Combes" />
+    <parcel name="Les Crapousuets" />
+    <parcel name="Les Cras" />
+    <parcel name="Les Genevrières et le Suchot" />
+    <parcel name="Les Morais" />
+    <parcel name="Les Petits Vercots" />
+    <parcel name="Les Valozières" />
   </designation>
-  <designation name="Bonnes-Mares" category="Grand cru">
-      <parcel name="Les Bonnes Mares" />
+  <designation name="Auxey-Duresses" category="Village">
+    <parcel name="Bas des Duresses" category="Premier Cru" />
+    <parcel name="Climat du Val" category="Premier Cru" />
+    <parcel name="Clos du Val" category="Premier Cru" />
+    <parcel name="La Chapelle" category="Premier Cru" />
+    <parcel name="Les Bréterins" category="Premier Cru" />
+    <parcel name="Les Duresses" category="Premier Cru" />
+    <parcel name="Les Ecussaux" category="Premier Cru" />
+    <parcel name="Les Grands Champs" category="Premier Cru" />
+    <parcel name="Reugne" category="Premier Cru" />
+    <parcel name="Auxey-Duresses" />
+    <parcel name="Creux de Borgey" />
+    <parcel name="Creux de Tillet" />
+    <parcel name="Derrière le Four" />
+    <parcel name="En Polianges" />
+    <parcel name="En Saussois" />
+    <parcel name="La Canée" />
+    <parcel name="La Chateille" />
+    <parcel name="La Jonchère" />
+    <parcel name="La Macabrée" />
+    <parcel name="La Montagne du Bourdon" />
+    <parcel name="La Ruchotte" />
+    <parcel name="Largillas" />
+    <parcel name="Le Larrey des Hoz" />
+    <parcel name="Le Moulin Moine" />
+    <parcel name="Le Pain Haut" />
+    <parcel name="Le Plain de Lugny" />
+    <parcel name="Le Porolley" />
+    <parcel name="Les Boutonniers" />
+    <parcel name="Les Closeaux" />
+    <parcel name="Les Cloux" />
+    <parcel name="Les Crais" />
+    <parcel name="Les Fosses" />
+    <parcel name="Les Grandes Vignes" />
+    <parcel name="Les Hautés" />
+    <parcel name="Les Heptures" />
+    <parcel name="Les Hoz" />
+    <parcel name="Les Lavières" />
+    <parcel name="Les Riames" />
+    <parcel name="Les Rondières" />
+    <parcel name="Les Vireux" />
+    <parcel name="Nampoillon" />
+    <parcel name="Pain Perdu" />
+    <parcel name="Sous la Velle" />
+    <parcel name="Sous le Marsain" />
+    <parcel name="Sur Melin" />
+  </designation>
+  <designation name="Beaune" category="Village">
+    <parcel name="A l'Ecu" category="Premier Cru" />
+    <parcel name="Aux Coucherias" category="Premier Cru" />
+    <parcel name="Aux Cras" category="Premier Cru" />
+    <parcel name="Belissand " category="Premier Cru" />
+    <parcel name="Blanches Fleurs" category="Premier Cru" />
+    <parcel name="Champs Pimont" category="Premier Cru" />
+    <parcel name="Clos de l'Ecu " category="Premier Cru" />
+    <parcel name="Clos de la Feguine" category="Premier Cru" />
+    <parcel name="Clos de la Mousse" category="Premier Cru" />
+    <parcel name="Clos des Avaux" category="Premier Cru" />
+    <parcel name="Clos des Ursules" category="Premier Cru" />
+    <parcel name="Clos du roi " category="Premier Cru" />
+    <parcel name="En Genêt" category="Premier Cru" />
+    <parcel name="En l'Orme " category="Premier Cru" />
+    <parcel name="La Mignotte" category="Premier Cru" />
+    <parcel name="Le Bas des Teurons" category="Premier Cru" />
+    <parcel name="Le Clos des Mouches" category="Premier Cru" />
+    <parcel name="Les Aigrots" category="Premier Cru" />
+    <parcel name="Les Avaux" category="Premier Cru" />
+    <parcel name="Les Boucherottes" category="Premier Cru" />
+    <parcel name="Les Bressandes" category="Premier Cru" />
+    <parcel name="Les Cents Vignes" category="Premier Cru" />
+    <parcel name="Les Chouacheux" category="Premier Cru" />
+    <parcel name="Les Epenotes" category="Premier Cru" />
+    <parcel name="Les Fèves" category="Premier Cru" />
+    <parcel name="Les Grèves" category="Premier Cru" />
+    <parcel name="Les Marconnets" category="Premier Cru" />
+    <parcel name="Les Montrevenots" category="Premier Cru" />
+    <parcel name="Les Perrières" category="Premier Cru" />
+    <parcel name="Les Reversés" category="Premier Cru" />
+    <parcel name="Les Sceaux" category="Premier Cru" />
+    <parcel name="Les Seurey" category="Premier Cru" />
+    <parcel name="Les Sizies" category="Premier Cru" />
+    <parcel name="Les Teurons" category="Premier Cru" />
+    <parcel name="Les Toussaints" category="Premier Cru" />
+    <parcel name="Les Tuvilains" category="Premier Cru" />
+    <parcel name="Les Vignes Franches" category="Premier Cru" />
+    <parcel name="Montée Rouge" category="Premier Cru" />
+    <parcel name="Pertuisots" category="Premier Cru" />
+    <parcel name="Sur les Grèves" category="Premier Cru" />
+    <parcel name="Sur les Grèves-Clos Sainte-Anne" category="Premier Cru" />
+    <parcel name="Clos Saint-Landry " category="Premier Cru" />
+    <parcel name="Au Renard" />
+    <parcel name="Chaume Gauffriot" />
+    <parcel name="Dessus des Marconnets" />
+    <parcel name="Fb de Bouze" />
+    <parcel name="La Blanchisserie" />
+    <parcel name="La Creusotte" />
+    <parcel name="Le Foulot" />
+    <parcel name="Les Beaux Fougets" />
+    <parcel name="Les Bons Feuvres" />
+    <parcel name="Les Chardonnereux" />
+    <parcel name="Les Chilènes" />
+    <parcel name="Les Epenottes" />
+    <parcel name="Les Levées et les Piroles" />
+    <parcel name="Les Longes" />
+    <parcel name="Les Maladières" />
+    <parcel name="Les Mariages" />
+    <parcel name="Les Paules" />
+    <parcel name="Les Pointes de Tuvilains" />
+    <parcel name="Les Prévoles" />
+    <parcel name="Les rôles" />
+    <parcel name="Les Vérottes" />
+    <parcel name="Longbois" />
+    <parcel name="Lulunne" />
+    <parcel name="Montagne Saint Désiré" />
+    <parcel name="Montée Rouge" />
+    <parcel name="Siserpe" />
+  </designation>
+  <designation name="Bâtard-Montrachet" category="Grand cru">
+    <parcel name="Bâtard-Montrachet" />
+  </designation>  <designation name="Bienvenues-Bâtard-Montrachet" category="Grand cru">
+    <parcel name="Bienvenues-Bâtard-Montrachet" />  </designation>  <designation name="Blagny" category="Village">    <parcel name="Hameau de Blagny" category="Premier Cru" />    <parcel name="La Garenne ou sur la Garenne" category="Premier Cru" />    <parcel name="La Jeunellotte" category="Premier Cru" />    <parcel name="La Pièce sous le Bois" category="Premier Cru" />    <parcel name="Sous Blagny" category="Premier Cru" />    <parcel name="Sous le Dos d'Ane" category="Premier Cru" />    <parcel name="Sous le Puits" category="Premier Cru" />    <parcel name="Le Bois de Blagny" />    <parcel name="Le Trézin" />    <parcel name="Les Ravelles" />  </designation>  <designation name="Bonnes-Mares" category="Grand cru">
+    <parcel name="Les Bonnes Mares" />
+  </designation>  <designation name="Bouzeron" category="Village">    <parcel name="En Rabeutelot" />    <parcel name="L' Hermitage" />    <parcel name="La Digoine" />    <parcel name="La Epoube" />    <parcel name="La Fortune" />    <parcel name="La Tournelle" />    <parcel name="Le Bois de Foiret" />    <parcel name="Le Bourg" />    <parcel name="Le Champ des Crots" />    <parcel name="Le Feulin" />    <parcel name="Les Bouchines" />    <parcel name="Les Boyottes" />    <parcel name="Les Clous" />    <parcel name="Les Corcelles" />    <parcel name="Les Cordères" />    <parcel name="Les Fias" />    <parcel name="Les Louères" />    <parcel name="Les Pertuzots" />    <parcel name="Les Seurrées" />    <parcel name="Sous le Bois" />    <parcel name="Vers le Petits Puits" />  </designation>  <designation name="Chablis et Chablis Premier Cru" category="Village">    <parcel name="Beauroy" category="Premier Cru" />    <parcel name="Berdiot" category="Premier Cru" />    <parcel name="Beugnons" category="Premier Cru" />    <parcel name="Butteaux" category="Premier Cru" />    <parcel name="Chapelot" category="Premier Cru" />    <parcel name="Chatains" category="Premier Cru" />    <parcel name="Chaume de Talvat" category="Premier Cru" />    <parcel name="Côte de Bréchain" category="Premier Cru" />    <parcel name="Côte de Cuissy" category="Premier Cru" />    <parcel name="Côte de Fontenay" category="Premier Cru" />    <parcel name="Côte de Jouan" category="Premier Cru" />    <parcel name="Côte de Léchet" category="Premier Cru" />    <parcel name="Côte de Savant" category="Premier Cru" />    <parcel name="Côte de Vaubarousse" category="Premier Cru" />    <parcel name="Côte des Prés-Girots" category="Premier Cru" />    <parcel name="Forêts" category="Premier Cru" />    <parcel name="Fourchaume" category="Premier Cru" />    <parcel name="L'Homme Mort" category="Premier Cru" />    <parcel name="Les Beauregards" category="Premier Cru" />    <parcel name="Les Epinottes" category="Premier Cru" />    <parcel name="Les Fourneaux" category="Premier Cru" />    <parcel name="Les Lys" category="Premier Cru" />    <parcel name="Mélinots" category="Premier Cru" />    <parcel name="Mont de Milieu" category="Premier Cru" />    <parcel name="Montée de Tonnerre" category="Premier Cru" />    <parcel name="Montmains" category="Premier Cru" />    <parcel name="Morein" category="Premier Cru" />    <parcel name="Pied d'Aloup" category="Premier Cru" />    <parcel name="Roncières" category="Premier Cru" />    <parcel name="Sécher" category="Premier Cru" />    <parcel name="Troesmes" category="Premier Cru" />    <parcel name="Vaillons" category="Premier Cru" />    <parcel name="Vau de Vey" category="Premier Cru" />    <parcel name="Vau Ligneau" category="Premier Cru" />    <parcel name="Vaucoupin" category="Premier Cru" />    <parcel name="Vaugiraut" category="Premier Cru" />    <parcel name="Vaulorent" category="Premier Cru" />    <parcel name="Vaupulent" category="Premier Cru" />    <parcel name="Vaux Ragons" category="Premier Cru" />    <parcel name="Vosgros" category="Premier Cru" />  </designation>  <designation name="Chablis Grand Cru" category="Grand cru">
+    <parcel name="Blanchot" />    <parcel name="Bougros" />    <parcel name="Grenouilles" />    <parcel name="Les Clos" />    <parcel name="Preuses" />    <parcel name="Valmur" />    <parcel name="Vaudésir" />  </designation>  <designation name="Chambertin" category="Grand cru">
+    <parcel name="Chambertin" />  </designation>  <designation name="Chambertin-Clos de Bèze" category="Grand cru">
+    <parcel name="Clos de Bèze" />  </designation>  <designation name="Chambolle-Musigny" category="Village">    <parcel name="Aux Beaux Bruns" category="Premier Cru" />    <parcel name="Aux Combottes" category="Premier Cru" />    <parcel name="Aux Echanges" category="Premier Cru" />    <parcel name="Derrière la Grange" category="Premier Cru" />    <parcel name="La Combe d'Orveau" category="Premier Cru" />    <parcel name="Les Amoureuses" category="Premier Cru" />    <parcel name="Les Baudes" category="Premier Cru" />    <parcel name="Les Borniques" category="Premier Cru" />    <parcel name="Les Carrières" category="Premier Cru" />    <parcel name="Les Chabiots" category="Premier Cru" />    <parcel name="Les Charmes" category="Premier Cru" />    <parcel name="Les Chatelots" category="Premier Cru" />    <parcel name="Les Combottes" category="Premier Cru" />    <parcel name="Les Cras" category="Premier Cru" />    <parcel name="Les Feusselottes (ou Les Feusselotes)" category="Premier Cru" />    <parcel name="Les Fuées" category="Premier Cru" />    <parcel name="Les Groseilles" category="Premier Cru" />    <parcel name="Les Gruenchers" category="Premier Cru" />    <parcel name="Les Hauts Doix" category="Premier Cru" />    <parcel name="Les Lavrottes" category="Premier Cru" />    <parcel name="Les Noirots" category="Premier Cru" />    <parcel name="Les Plantes" category="Premier Cru" />    <parcel name="Les Sentiers" category="Premier Cru" />    <parcel name="Les Véroilles" category="Premier Cru" />    <parcel name="Aux Croix" />    <parcel name="Derrière le Four" />    <parcel name="La Combe d'Orveau" />    <parcel name="La Taupe" />    <parcel name="Le Village" />    <parcel name="Les Argillières" />    <parcel name="Les Athets" />    <parcel name="Les Babillères" />    <parcel name="Les Barottes" />    <parcel name="Les Bas Doix" />    <parcel name="Les Bussières" />    <parcel name="Les Chardannes" />    <parcel name="Les clos" />    <parcel name="Les Clos de l'Orme" />    <parcel name="Les Condemennes" />    <parcel name="Les Cras" />    <parcel name="Les Creux Baissants" />    <parcel name="Les Danguerrins" />    <parcel name="Les Drazey" />    <parcel name="Les Echezeaux" />    <parcel name="Les Fouchères" />    <parcel name="Les Fremières" />    <parcel name="Les Gamaires" />    <parcel name="Les Guérippes" />    <parcel name="Les Herbues" />    <parcel name="Les Jutruots" />    <parcel name="Les Mal Carrées" />    <parcel name="Les Maladières" />    <parcel name="Les Mombies" />    <parcel name="Les Nazoires" />    <parcel name="Les Pas de Chat" />    <parcel name="Les Porlottes" />    <parcel name="Les Sordes" />  </designation>  <designation name="Chapelle-Chambertin" category="Grand cru">
+    <parcel name="En la chapelle" />    <parcel name="Les Gémeaux" />  </designation>  <designation name="Charlemagne" category="Grand cru">
+    <parcel name="Basses Mourottes" />    <parcel name="En Charlemagne" />    <parcel name="Hautes Mourottes" />    <parcel name="Le Charlemagne" />    <parcel name="Le Corton" />    <parcel name="Les Languettes" />    <parcel name="Les Pougets" />    <parcel name="Les Renardes" />  </designation>  <designation name="Charmes-Chambertin" category="Grand cru">
+    <parcel name="Aux Charmes" />    <parcel name="Charmes" />  </designation>  <designation name="Chassagne-Montrachet" category="Village">    <parcel name="Abbaye de Morgeot" category="Premier Cru" />    <parcel name="Blanchot dessus" category="Premier Cru" />    <parcel name="Bois de Chassagne" category="Premier Cru" />    <parcel name="Cailleret" category="Premier Cru" />    <parcel name="Champs Jendreau" category="Premier Cru" />    <parcel name="Chassagne" category="Premier Cru" />    <parcel name="Chassagne du Clos Saint-Jean" category="Premier Cru" />    <parcel name="Clos Chareau" category="Premier Cru" />    <parcel name="Clos Pitois" category="Premier Cru" />    <parcel name="Clos Saint-Jean" category="Premier Cru" />    <parcel name="Dent de Chien" category="Premier Cru" />    <parcel name="En Cailleret" category="Premier Cru" />    <parcel name="En Remilly" category="Premier Cru" />    <parcel name="En Virondot" category="Premier Cru" />    <parcel name="Ez Crets" category="Premier Cru" />    <parcel name="Ez Crottes" category="Premier Cru" />    <parcel name="Francemont" category="Premier Cru" />    <parcel name="Guerchère" category="Premier Cru" />    <parcel name="La Boudriotte" category="Premier Cru" />    <parcel name="La Cardeuse" category="Premier Cru" />    <parcel name="La Chapelle" category="Premier Cru" />    <parcel name="La Grande Borne" category="Premier Cru" />    <parcel name="La Grande Montagne" category="Premier Cru" />    <parcel name="La Maltroie" category="Premier Cru" />    <parcel name="La Romanée" category="Premier Cru" />    <parcel name="La Roquemaure" category="Premier Cru" />    <parcel name="Les Baudines" category="Premier Cru" />    <parcel name="Les Boirettes" category="Premier Cru" />    <parcel name="Les Bondues" category="Premier Cru" />    <parcel name="Les Brussonnes" category="Premier Cru" />    <parcel name="Les Champs gain" category="Premier Cru" />    <parcel name="Les Chaumées" category="Premier Cru" />    <parcel name="Les Chaumes" category="Premier Cru" />    <parcel name="Les Chenevottes" category="Premier Cru" />    <parcel name="Les Combards" category="Premier Cru" />    <parcel name="Les Commes" category="Premier Cru" />    <parcel name="Les Embazées" category="Premier Cru" />    <parcel name="Les Fairendes" category="Premier Cru" />    <parcel name="Les Grandes Ruchottes" category="Premier Cru" />    <parcel name="Les Grands Clos" category="Premier Cru" />    <parcel name="Les Macherelles" category="Premier Cru" />    <parcel name="Les Murées" category="Premier Cru" />    <parcel name="Les Pasquelles" category="Premier Cru" />    <parcel name="Les Petites Fairendes" category="Premier Cru" />    <parcel name="Les Petits Clos" category="Premier Cru" />    <parcel name="Les Places" category="Premier Cru" />    <parcel name="Les Rebichets" category="Premier Cru" />    <parcel name="Les Vergers" category="Premier Cru" />    <parcel name="Morgeot" category="Premier Cru" />    <parcel name="Petingeret" category="Premier Cru" />    <parcel name="Tête du Clos" category="Premier Cru" />    <parcel name="Tonton Marcel" category="Premier Cru" />    <parcel name="Vide Bourse" category="Premier Cru" />    <parcel name="Vigne Blanche" category="Premier Cru" />    <parcel name="Vigne Derrière" category="Premier Cru" />    <parcel name="Blanchot Dessous" />    <parcel name="Bouchon de Corvée" />    <parcel name="Champ Derrière" />    <parcel name="Champs de Morjot" />    <parcel name="Clos Bernot" />    <parcel name="Dessous les Mues" />    <parcel name="En Journoblot" />    <parcel name="En l'Ormeau" />    <parcel name="En Pimont" />    <parcel name="Fontaine Sot" />    <parcel name="La Bergerie" />    <parcel name="La Canière" />    <parcel name="La Canotte" />    <parcel name="La Goujonne" />    <parcel name="La Platière" />    <parcel name="La Têtière" />    <parcel name="Le Clos Reland" />    <parcel name="Le Concis du Champs" />    <parcel name="Le Parterre" />    <parcel name="Le Poirier du Clos" />    <parcel name="Les Battaudes" />    <parcel name="Les Benoites" />    <parcel name="Les Beuttes" />    <parcel name="Les Chambres" />    <parcel name="Les Charnières" />    <parcel name="Les Chaumes" />    <parcel name="Les Chênes" />    <parcel name="Les Encégnières" />    <parcel name="Les Essarts" />    <parcel name="Les Grandes Terres" />    <parcel name="Les Houillères" />    <parcel name="Les Lombardes" />    <parcel name="Les Masures" />    <parcel name="Les Meix Goudard" />    <parcel name="Les Morichots" />    <parcel name="Les Mouchottes" />    <parcel name="Les Perclos" />    <parcel name="Les Pierres" />    <parcel name="Les Plantes Momières" />    <parcel name="Les Voillenots Dessous" />    <parcel name="Plante du Gaie" />    <parcel name="Plante Saint Aubin" />    <parcel name="Pot Bois" />    <parcel name="Puits Merdreaux" />    <parcel name="Sur Matronge" />    <parcel name="Voillenot Dessous" />  </designation>  <designation name="Chevalier-Montrachet" category="Grand cru">
+    <parcel name="Chevalier-Montrachet" />  </designation>  <designation name="Chorey-Lès-Beaune" category="Village">    <parcel name="Aux Clous" />    <parcel name="Champs Piétant" />    <parcel name="Confrelin" />    <parcel name="La Maladérotte" />    <parcel name="Le Grand" />    <parcel name="Le Grand Saussy" />    <parcel name="Les Beaumonts" />    <parcel name="Les Bons Ores" />    <parcel name="Les Champs Longs" />    <parcel name="Les Closeaux" />    <parcel name="Les Crais" />    <parcel name="Les Grandes Rêpes" />    <parcel name="Les Pertuisotes" />    <parcel name="Les Petites Rêpes" />    <parcel name="Les Ratosses" />    <parcel name="Petits Champs Longs" />    <parcel name="Pièce du Chapitre" />    <parcel name="Plantes des Plantes" />    <parcel name="Poirier Malchaussé" />    <parcel name="Saussy" />    <parcel name="Trot Garnier" />    <parcel name="Tue-Boeuf" />  </designation>  <designation name="Clos de La Roche" category="Grand cru">
+    <parcel name="Clos de la Roche" />    <parcel name="Les Chabiots" />    <parcel name="Les Fremières" />    <parcel name="Les Froichots" />    <parcel name="Les Genavrières" />    <parcel name="Les Mochamps" />    <parcel name="Monts Luisants" />  </designation>  <designation name="Clos de Tart" category="Grand cru">
+    <parcel name="Clos de Tart" />  </designation>  <designation name="Clos de Vougeot" category="Grand cru">
+    <parcel name="Clos de Vougeot" />  </designation>  <designation name="Clos des Lambrays" category="Grand cru">
+    <parcel name="Clos des Lambrays" />    <parcel name="Les Bouchots" />    <parcel name="Meix-Rentier" />  </designation>  <designation name="Clos Saint-Denis" category="Grand cru">
+    <parcel name="Calouère" />    <parcel name="Clos Saint-Denis" />    <parcel name="Les Chaffots" />    <parcel name="Maison Brûlée" />  </designation>  <designation name="Corton" category="Grand cru">
+    <parcel name="Basses Mourottes" />    <parcel name="En Charlemagne" />    <parcel name="Hautes Mourottes" />    <parcel name="La Vigne-au-Saint" />    <parcel name="Le Charlemagne" />    <parcel name="Le Clos du Roi" />    <parcel name="Le Corton" />    <parcel name="Le Meix Lallemand" />    <parcel name="Le Rognet et Corton" />    <parcel name="Les Bressandes" />    <parcel name="Les Chaumes" />    <parcel name="Les Chaumes et la Voierosse" />    <parcel name="Les Combes" />    <parcel name="Les Fiètres" />    <parcel name="Les Grandes Lolières" />    <parcel name="Les Grèves" />    <parcel name="Les Languettes" />    <parcel name="Les Maréchaudes" />    <parcel name="Les Meix" />    <parcel name="Les Moutottes" />    <parcel name="Les Paulands" />    <parcel name="Les Perrières" />    <parcel name="Les Pougets" />    <parcel name="Les Renardes" />    <parcel name="Les Vergennes" />  </designation>  <designation name="Corton-Charlemagne" category="Grand cru">
+    <parcel name="Basses Mourottes" />    <parcel name="En Charlemagne" />    <parcel name="Hautes Mourottes" />    <parcel name="Le Charlemagne" />    <parcel name="Le Corton" />    <parcel name="Les Languettes" />    <parcel name="Les Pougets" />    <parcel name="Les Renardes" />  </designation>  <designation name="Côte de Beaune" category="Village">    <parcel name="Dessus des Marconnets" />    <parcel name="La Grande Châtelaine" />    <parcel name="Les Mondes Rondes" />    <parcel name="Les Monsnières" />    <parcel name="Les Pierres Blanches" />    <parcel name="Les Topes Bizot" />    <parcel name="Montbatois" />  </designation>  <designation name="Criots-Bâtard-Montrachet" category="Grand cru">
+    <parcel name="Les Criots" />  </designation>  <designation name="Echezeaux" category="Grand cru">
+    <parcel name="Clos-St-Denis" />    <parcel name="Echézeaux du Dessus" />    <parcel name="En Orveaux" />    <parcel name="Les Beaux Monts" />    <parcel name="Les Champs Traversins" />    <parcel name="Les Cruots ou Vignes Blanches" />    <parcel name="Les Loächausses" />    <parcel name="Les Poulaillères" />    <parcel name="Les Quartiers de Nuits" />    <parcel name="Les Rouges du Bas" />    <parcel name="Les Treux" />  </designation>  <designation name="La Grande Rue" category="Grand cru">
+    <parcel name="La Grande Rue" />  </designation>  <designation name="Grands Echezeaux" category="Grand cru">
+    <parcel name="Les Grands Echezeaux" />  </designation>  <designation name="Griotte-Chambertin" category="Grand cru">
+    <parcel name="En Griotte" />  </designation>  <designation name="Latricières-Chambertin" category="Grand cru">
+    <parcel name="Latricières" />  </designation>  <designation name="Mazis-Chambertin" category="Grand cru">
+    <parcel name="Les Mazis-Bas" />    <parcel name="Les Mazis-Hauts" />  </designation>  <designation name="Mazoyères-Chambertin" category="Grand cru">
+    <parcel name="Mazoyères" />  </designation>  <designation name="Montrachet" category="Grand cru">
+    <parcel name="Montrachet" />  </designation>  <designation name="Musigny" category="Grand cru">
+    <parcel name="La Combe d'Orveaux" />
+    <parcel name="Les Musigny" />
+    <parcel name="Les Petits Musigny" />
+  </designation>  <designation name="Richebourg" category="Grand cru">
+    <parcel name="Les Richebourgs" />
+    <parcel name="Les Vérroilles ou Richebourgs" />
+  </designation>  <designation name="La Romanée" category="Grand cru">
+    <parcel name="La Romanée" />  </designation>  <designation name="Romanée-Conti" category="Grand cru">
+    <parcel name="La Romanée Conti" />
+  </designation>  <designation name="Romanée-Saint-Vivant" category="Grand cru">
+    <parcel name="Romanée-Saint-Vivant" />
+  </designation>  <designation name="Ruchottes Chambertin" category="Grand cru">
+    <parcel name="Ruchottes du Bas" />
+    <parcel name="Ruchottes du Dessus" />
+  </designation>  <designation name="La Tâche" category="Grand cru">
+    <parcel name="La Tâche" />
+    <parcel name="Les Gaudichots" />
   </designation>
 </designations>

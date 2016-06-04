@@ -50,7 +50,14 @@ Template.registerHelper(
 Template.registerHelper(
   "designations", function () {
     // Show designations
-    return Designations.find({});
+    return Designations.find({}, {sort: {name: 1}});
+  },
+);
+
+Template.registerHelper(
+  "parcels", function () {
+    // Show designations
+    return Parcels.find({}, {sort: {name: 1}});
   },
 );
 
@@ -73,7 +80,7 @@ Template.newEntry.events({
     const millesime = Number(target.millesime.value);
     const quantity = Number(target.quantity.value);
     const comments = target.comments.value;
-    
+
     Meteor.call('upsertBottle', wineId, millesime, quantity,
       function(error, result){
         var id = result;
@@ -197,7 +204,9 @@ Template.wines.events({
 
 Template.designations.events({
   "click .delete"() {
-    Designations.remove(this._id);
+    Meteor.call('deleteDesignation', this._id);
+    // Parcels.remove({designationId: this._id});
+    // Designations.remove(this._id);
   },
   "click .add"() {
     Meteor.call('xmlParse');
